@@ -12,7 +12,7 @@ async function LoadHeader() {
         .catch(error => console.error("Error loading header:", error));
 }
 function LoadFooter() {
-    fetch("/parts/footer.html")
+    fetch("/temblemy/parts/footer.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer-container").innerHTML = data;
@@ -107,8 +107,6 @@ function displayBookByName(name) {
         .catch(error => console.error("Error fetching data:", error));
 }
 document.addEventListener("click", function(event) {
-    console.log(event.target);
-    console.log(event.target.id);
     if (event.target.id === "search-button") {
         const searchInput = document.getElementById("search-input");
         if (searchInput) {
