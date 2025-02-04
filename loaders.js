@@ -24,7 +24,7 @@ async function writeBook(book) {
         <button title="${book.title}\nAuthor: ${book.author}\nPublished: ${book.year}\nPrice: $${book.price}" id="${book.id}" style="border: 2px solid #000;
                 border-radius: 5px;
                 cursor: pointer;"
-                onclick="window.location.href = '/delivery.html?id=${book.id}'"
+                onclick="window.location.href = '/temblemy/delivery.html?id=${book.id}'"
                 onmouseover="this.style.border = '2px solid #FFF'"
                 onmouseout="this.style.border = '2px solid #000'">
             <div class="bookItem" style="
