@@ -1,7 +1,7 @@
 async function LoadHeader() {
-    let headerfile = "/parts/header.html";
+    let headerfile = "/temblemy/parts/header.html";
     if (window.innerHeight > window.innerWidth) {
-        headerfile = "/parts/header2.html";
+        headerfile = "/temblemy/parts/header2.html";
     }
     console.log(headerfile);
     fetch(headerfile)
@@ -48,7 +48,7 @@ async function writeBook(book) {
     `);
 }
 async function displayBooks(type) {
-    fetch("/data/books.json")
+    fetch("/temblemy/data/books.json")
         .then(response => response.json())
         .then(books => {
             books.forEach(book => {
@@ -61,7 +61,7 @@ async function displayBooks(type) {
         .catch(error => console.error("Error fetching data:", error));
 }
 async function getBook(id) {
-    return fetch("/data/books.json")
+    return fetch("/temblemy/data/books.json")
         .then(response => response.json())
         .then(books => {
             for (const book of books) {
@@ -91,7 +91,7 @@ async function fixBookOrientation() {
 function displayBookByName(name) {
     const regexPattern = name.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&").replace(/%/g, ".*").replace(/_/g, ".");
     const regex = new RegExp(regexPattern, "i");
-    fetch("/data/books.json")
+    fetch("/temblemy/data/books.json")
         .then(response => response.json())
         .then(books => {
             let count = 0;
