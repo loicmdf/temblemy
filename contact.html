@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | T_Emblemy Collectible Books</title>
+    <link rel="stylesheet" href="/assignment.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            color: white;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255);
+            color: black;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background: RGB(48, 30, 16);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: brown;
+        }
+    </style>
+</head>
+
+<body>
+<script src="/loaders.js"></script>
+
+<div id="header-container"></div>
+<script>LoadHeader();</script>
+
+<main>
+    <div class="contact-form" id="contact-form">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="title">Title</label>
+            <select id="title" name="title" required>
+                <option value="">-- Select --</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Sir">Sir</option>
+                <option value="Ms">Ms</option>
+                <option value="Dr">Dr</option>
+            </select>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="query">Nature of Query</label>
+            <select id="query" name="query" required>
+                <option value="">-- Select --</option>
+                <option value="Buy books">Buy books</option>
+                <option value="Sell books">Sell books</option>
+                <option value="Return a book">Return a book</option>
+                <option value="Delivery">Delivery</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</main>
+<script>
+  function fixOrientation() {
+    if (window.innerHeight > window.innerWidth) {
+      const form = document.getElementById('contact-form');
+      form.style.marginTop = 100 + "px";
+    }
+  }
+  window.onload = fixOrientation;
+  window.addEventListener('resize', fixOrientation);
+</script>
+<div id="footer-container"></div>
+<script>LoadFooter();</script>
+
+</body>
+</html>

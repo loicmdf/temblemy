@@ -1,0 +1,239 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery | T_Emblemy Collectible Books</title>
+    <link rel="stylesheet" href="/assignment.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <style>
+        .window {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .book-details {
+            overflow-y: auto;
+            max-height: 180px;
+        }
+
+
+        .book-image {
+            width: auto;
+            height: 460px;
+            flex-shrink: 0;
+            border-radius: 12px;
+        }
+        .book-title {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #4A2C2A;
+            margin-bottom: 10px;
+        }
+        .book-author,
+        .book-price,
+        .book-rating,
+        .book-stock,
+        .book-description {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 0.90rem;
+        }
+
+
+
+        .delivery-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+        .delivery-table th,
+        .delivery-table td {
+            height: 32px;
+            color: black;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .delivery-table th {
+            background-color: #4A2C2A;
+            color: white;
+        }
+        .delivery-table caption {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .delivery-text {
+            flex: 1;
+        }
+
+        .fieldpad {
+            padding: 5px;
+            position: relative;
+        }
+        .fieldpad-select {
+            position: relative;
+        }
+        .fieldpad-select select {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: transparent;
+            font-size: 1rem;
+        }
+
+        .submitbutton {
+            color:white;
+            width: 220px;
+            height: 40px;
+            background-color: #4A2C2A;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+<script src="/loaders.js"></script>
+
+<div id="header-container"></div>
+<script>LoadHeader();</script>
+
+<main>
+    <div class="window" id="window">
+        <div class="container" id="container">
+            <img id="book-image" src="" alt="Book Image" class="book-image" />
+            <div class="delivery-text">
+                <h2 id="book-title" class="book-title"></h2>
+                <div class="book-details">
+                    <p id="book-author" class="book-author">Author: <b><span id="author" class="author"></span></b></p>
+                    <p id="book-price" class="book-price">Price: <b>$<span class="price"></span></b></p>
+                    <p id="book-rating" class="book-rating">Rating: <b><span id="stars" class="stars"></span></b></p>
+                    <p id="book-stock" class="book-stock">Stock Available: <b><span id="stock" class="stock"></span></b></p>
+                    <p id="book-description" class="book-description"></p>
+                </div>
+                <form id="delivery-form" name="deliveryform">
+                    <table class="delivery-table" aria-describedby="delivery-table-info">
+                        <caption>Delivery Charges</caption>
+                        <thead>
+                        <tr>
+                            <th scope="col" class="fieldpad">Details</th>
+                            <th scope="col" class="fieldpad">Delivery Charge</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="fieldpad">Product price:</td>
+                            <td class="fieldpad" id="price" class="price"></td>
+                        </tr>
+                        <tr>
+                            <td class="fieldpad-select">
+                                <select id="location" name="location" required onchange="updatePrices()">
+                                    <option value="">-- Select delivery area --</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="eu">Europe</option>
+                                    <option value="us/ca">United States</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td class="fieldpad" id="locationfee">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td class="fieldpad"><b>Total fee:</b></td>
+                            <td class="fieldpad"><b id="totalfee">$0.00</b></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+                <p style="text-align: center;">
+                    <input type="button" value="Add To Cart" class="submitbutton" style="margin: 5px 5px"/>
+                    <input type="submit" value="Purchase" class="submitbutton" style="margin: 5px 5px" onclick="submitForm()"/>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="footer-container"></div>
+<script>LoadFooter();</script>
+
+</body>
+
+<script>
+    let price = 0;
+    let deliveryfee = 0;
+
+    function updatePrices() {
+        const loc = document.deliveryform.location.value;
+        if (loc === 'uk') {
+            deliveryfee = 3.00;
+        } else if (loc === 'eu') {
+            deliveryfee = 6.00;
+        } else if (loc === 'us/ca') {
+            deliveryfee = 5.00;
+        } else if (loc === 'other') {
+            deliveryfee = 10.00;
+        } else {
+            deliveryfee = 0.00;
+        }
+        document.getElementById("price").textContent = "$" + price.toFixed(2);
+        document.getElementById("locationfee").textContent = "$" + deliveryfee.toFixed(2);
+
+        document.getElementById("totalfee").textContent = "$" + (price + deliveryfee).toFixed(2);
+    }
+    function submitForm() {
+        const loc = document.deliveryform.location.value;
+        if (loc === "") {
+            alert("Please choose a location!");
+        } else {
+            alert("Payment Unavailable");
+        }
+    }
+
+    async function loadProductDetails() {
+        if (window.innerHeight > window.innerWidth) {
+            const window = document.getElementById('window');
+            window.style.marginTop = 120 + 'px';
+
+            const container = document.getElementById('container');
+            container.style.flexDirection = 'column';
+            container.style.alignItems= 'center';
+        }
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookId = urlParams.get('id');
+        const book = await getBook(bookId);
+        price = book.price;
+
+        document.getElementById("book-image").src = book.image;
+        document.getElementById("book-title").textContent = book.title;
+        document.getElementById("book-description").textContent = book.description;
+        document.getElementById("author").textContent = book.author;
+        document.getElementById("stock").textContent = book.stock;
+        for (const item of document.getElementsByClassName("price")) item.textContent = book.price;
+        document.getElementById("stars").textContent = book.rating;
+        updatePrices();
+    }
+    window.onload = loadProductDetails;
+</script>
+</html>

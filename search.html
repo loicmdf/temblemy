@@ -1,0 +1,32 @@
+<html lang="en">
+<head style="background-color: brown;">
+    <title>Search Results | T_Emblemy Collectible Books</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assignment.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<body>
+<script src="/loaders.js"></script>
+
+<div id="header-container"></div>
+<script>LoadHeader();</script>
+
+<main style="display: flex; flex-direction: column;">
+    <section id="search-amount" style="margin-bottom: 20px; color: white;">
+        Total Results: <b><span id="total-search-results">0</span></b>
+    </section>
+    <section class="book-list" id="book-list">
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('s');
+            displayBookByName(name);
+            document.title = `${name} | T_Emblemy Collectible Books`;
+        </script>
+    </section>
+</main>
+<div id="footer-container"></div>
+<script>LoadFooter();</script>
+
+</body>
+</html>

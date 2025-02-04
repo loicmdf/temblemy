@@ -1,0 +1,162 @@
+<html lang="en">
+<head style="background-color: brown;">
+  <title>Home | T_Emblemy Collectible Books</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assignment.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    .overview {
+      display: flex;
+      color: white;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+      padding: 30px 40px 30px 40px;
+      border-bottom: 2px solid black;
+      background: linear-gradient(to right, RGBA(64, 40, 24, 256) 30%, rgba(64,40, 24, 0) 100%),
+      url("/images/bg1.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+
+    .overview .content {
+      max-width: 50%;
+    }
+
+    .overview h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .overview p {
+      font-size: 1.0rem;
+      line-height: 1.5;
+    }
+
+    .b1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border: 2px solid #000;
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, RGBA(64, 64, 64, 256) 20%, rgba(80, 52, 30, 0) 100%),
+      url("/images/bg2.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+    .b1:hover {
+      background: linear-gradient(to right, RGBA(128, 128, 128, 256) 20%, rgba(80, 52, 30, 0) 100%),
+      url("/images/bg2.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+
+    .b2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border: 2px solid #000;
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, RGBA(64, 64, 64, 256) 20%, rgba(80, 52, 30, 0) 100%),
+      url("/images/bg3.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+    .b2:hover {
+      background: linear-gradient(to right, RGBA(128, 128, 128, 256) 20%, rgba(80, 52, 30, 0) 100%),
+      url("/images/bg3.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  </style>
+</head>
+
+<body>
+<script src="/loaders.js"></script>
+
+<div id="header-container"></div>
+<script>LoadHeader();</script>
+
+<section class="overview" id="overview">
+  <div class="content" id="content">
+    <h1>What do we offer?</h1>
+    <p>
+      <b>_T_Emblemy Collectible Books</b> is a book store which sells rare classic fiction since 40 years! We aim to
+      provide books designated for the USA, Canada, New Zealand and Australia. Check out our stocks below and don't
+      hesitate to contact us.
+    </p>
+  </div>
+  <iframe id="video" width="480" height="270" aria-label="video iframe" title="url" class="YoutubeVideo" src="https://www.youtube.com/embed/6OQ5gkntrw0" frameborder="0" scrolling="no" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen="" style="overflow: hidden;"></iframe>
+</section>
+
+<main>
+  <section class="buttons" id="buttons">
+    <a href="/books1.html" style="text-decoration: none;">
+      <button class="b1" id="b1">
+        <text class="buttontitle" style="font-size: 24px; font-weight: bold; text-align: left; align-self: flex-start; margin-bottom: auto;">
+          19th Century Books<br>
+          <text class="buttondesc" style="font-size: 14px;">
+            Browse our collection of books dating back from the 19th century that we sell. These are very rare specimens
+            with very few to exists.
+          </text>
+        </text>
+        <text class="b1title" style="font-size: 18px; align-self: flex-start;">Limited</text>
+      </button>
+    </a>
+
+    <a href="/books2.html" style="text-decoration: none;">
+      <button class="b2" id="b2">
+        <text class="buttontitle" style="font-size: 24px; font-weight: bold; text-align: left; align-self: flex-start; margin-bottom: auto;">
+          Modern Books<br>
+          <text class="buttondesc" style="font-size: 14px;">
+            Browse our collection of modern books that we also sell. These includes novels, manga, literature and even
+            school books.
+          </text>
+        </text>
+      </button>
+    </a>
+  </section>
+</main>
+<script>
+  function fixOrientation() {
+    if (window.innerHeight > window.innerWidth) {
+      const overview = document.getElementById('overview');
+      const overviewContent = document.getElementById('content');
+      const video = document.getElementById('video');
+
+      overview.style.marginTop = 110 + "px";
+      overview.style.flexDirection = 'column';
+      overviewContent.style.maxWidth = '100%';
+      video.style.width = (window.innerWidth - 100) + "px";
+      video.style.height = ((window.innerWidth - 100) * 0.6) + "px";
+    }
+  }
+  window.onload = fixOrientation;
+  window.addEventListener('resize', fixOrientation);
+</script>
+
+<div id="footer-container"></div>
+<script>LoadFooter();</script>
+
+</body>
+
+</html>
