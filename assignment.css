@@ -33,7 +33,6 @@
   .header-navigator ul {
     list-style-type: none;
     display: flex;
-    margin-left: 20px;
     gap: 20px;
   }
 
