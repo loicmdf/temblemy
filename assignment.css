@@ -77,21 +77,14 @@
 
 
 
-  main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom, RGB(48, 30, 16), RGB(72, 48, 30));
-    padding: 20px;
-  }
- .buttons {
+main {
+   flex: 1;
    display: flex;
-   flex-wrap: wrap;
-   gap: 20px;
    justify-content: center;
-   text-decoration: none;
- }
+   align-items: center;
+   background: linear-gradient(to bottom, RGB(48, 30, 16), RGB(72, 48, 30));
+   padding: 20px;
+}
 .book-list {
   display: flex;
   gap: 20px;
