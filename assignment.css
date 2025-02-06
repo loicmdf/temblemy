@@ -123,9 +123,6 @@ main {
   background: rgba(128, 128, 128, 0.8);
 }
 
-.bookItem:hover {
-  scale: 97.5%
-}
 .bookItemImg {
   width: 250px;
   height: 350px;
