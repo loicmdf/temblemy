@@ -1,78 +1,93 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 
-  header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(to right, RGB(48, 30, 16), RGB(64, 40, 24));
-    display: flex;
-    align-items: center;
-    padding: 5px 20px 5px 20px;
-    border-bottom: 2px solid black;
-  }
 
-  .header-name {
-    font-size: 1.5rem;
-    margin-left: 20px;
-    color: white;
-  }
 
-  .header-navigator ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-  }
+header {
+  position: fixed;  /* This is used to keep the header fixed up no matter how much we scroll */
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, RGB(48, 30, 16), RGB(64, 40, 24));
+  display: flex;
+  align-items: center;
+  padding: 5px 20px 5px 20px;
+  border-bottom: 2px solid black;
+}
+.header-name {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  color: white;
+}
+.header-navigator ul {
+  list-style-type: none;
+  display: flex;
+  margin-left: 20px;
+  gap: 20px;
+}
+.header-navigator ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+.header-navigator ul li a:hover {
+  color: gray;
+}
 
-  .header-navigator ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
 
-  .header-navigator ul li a:hover {
-    color: gray;
-  }
-
-  .search-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #search-input {
-    width: 200px;
-    border: 2px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    box-sizing: border-box;
-  }
-  #search-button {
-    background-color: white;
-    color: white;
-    cursor: pointer;
-    border-radius: 0 5px 5px 0;
-  }
-  #search-button:hover {
-    background-color: gray;
-  }
-  #search-input:focus {
-    border-color: brown;
-  }
-
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search-input {
+  width: 200px;
+  border: 2px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+#search-button {
+  background-color: white;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+#search-button:hover {
+  background-color: gray;
+}
+#search-input:focus {
+  border-color: brown;
+}
+.dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: RGB(64, 40, 24);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+.dropdown a:hover {
+  background-color: RGB(48, 30, 16);
+}
 
 
 
