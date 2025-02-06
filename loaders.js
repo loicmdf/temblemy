@@ -20,6 +20,7 @@ function LoadFooter() {
         .catch(error => console.error("Error loading header:", error));
 }
 async function writeBook(book) {
+    const description = book.description.length > 600 ? book.description.substring(0, 600) + "..." : book.description;
     document.getElementsByClassName("book-list").item(0).insertAdjacentHTML("beforeend", `
         <button class="bookItem" title="${book.title}\nAuthor: ${book.author}\nPublished: ${book.year}\nPrice: $${book.price}" id="${book.id}" 
         style="border: 2px solid #000;
@@ -34,7 +35,7 @@ async function writeBook(book) {
                  background-size: cover;
                  background-repeat: no-repeat;
                  background-position: center;">
-                 <span class="bookItem-description">${book.description}</span>
+                 <span class="bookItem-description">${description}</span>
             </div>
             <div style="background-color: black; width: 100%; padding: 10px 0;">
                 <p class="price" style="font-size: 20px; font-weight: bold; margin: 0; color: white;">Price: $${book.price}</p>
