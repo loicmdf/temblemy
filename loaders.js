@@ -8,7 +8,6 @@ function LoadHeader() {
         .then(response => response.text())
         .then(data => {
             document.getElementById("header-container").innerHTML = data;
-            window.addEventListener("resize", LoadHeader)
         })
         .catch(error => console.error("Error loading header:", error));
 }
@@ -17,7 +16,6 @@ function LoadFooter() {
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer-container").innerHTML = data;
-            window.addEventListener("resize", LoadFooter)
         })
         .catch(error => console.error("Error loading header:", error));
 }
