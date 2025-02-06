@@ -103,7 +103,6 @@ function displayBookByName(name) {
         .catch(error => console.error("Error fetching data:", error));
 }
 document.addEventListener("click", function(event) {
-    const dropdown = document.getElementById("dropdown");
     if (event.target.id === "search-button") {
         const searchInput = document.getElementById("search-input");
         if (searchInput) {
@@ -113,11 +112,11 @@ document.addEventListener("click", function(event) {
             }
         }
     }
-    else if (event.target.id === "browse-button") {
+});
+document.addEventListener("mouseover", function(event) {
+    const dropdown = document.getElementById("dropdown");
+    if (event.target.id === "browse-button" || event.target.id === "dropdown") {
         dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    }
-    else {
-        dropdown.style.display = "none";
     }
 });
 document.addEventListener("keypress", function(event) {
