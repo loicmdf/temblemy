@@ -128,3 +128,11 @@ document.addEventListener("keypress", function(event) {
         document.getElementById("search-button").click();
     }
 });
+document.addEventListener("click", function(event) {
+    const dropdown = document.getElementById("dropdown");
+    if (event.target.id === "menu-button") {
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+})
