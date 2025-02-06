@@ -1,5 +1,5 @@
 function LoadHeader() {
-    const headerfile = window.innerHeight > window.innerWidth ? "/Assignment/temblemy/parts/header2.html" : "/Assignment/temblemy/parts/header.html";
+    const headerfile = window.innerHeight > window.innerWidth ? "/temblemy/parts/header2.html" : "/temblemy/parts/header.html";
     console.log(headerfile);
     fetch(headerfile)
         .then(response => response.text())
