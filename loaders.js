@@ -82,11 +82,15 @@ async function getBook(id) {
 
 
 async function fixBookOrientation() {
+    const booklist = document.getElementById('book-list');
     if (window.innerHeight > window.innerWidth) {
-        const booklist = document.getElementById('book-list');
-        booklist.style.marginTop = 120 + "px";
+        booklist.style.marginTop = 100 + "px";
         booklist.style.flexDirection = "column";
         booklist.style.overflowY = "auto";
+    } else {
+        booklist.style.marginTop = "0";
+        booklist.style.flexDirection = undefined;
+        booklist.style.overflowY = undefined;
     }
 }
 
