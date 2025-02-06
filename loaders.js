@@ -80,7 +80,6 @@ async function getBook(id) {
         });
 }
 
-
 async function fixBookOrientation() {
     const booklist = document.getElementById('book-list');
     if (window.innerHeight > window.innerWidth) {
