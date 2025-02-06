@@ -124,6 +124,9 @@ main {
 }
 
 .bookItem {
+  scale: 97.5%
+}
+.bookItemImg {
   width: 250px;
   height: 350px;
 }
