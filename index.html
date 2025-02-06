@@ -146,16 +146,21 @@
 </main>
 <script>
   function fixOrientation() {
+    const overview = document.getElementById('overview');
+    const overviewContent = document.getElementById('content');
+    const video = document.getElementById('video');
     if (window.innerHeight > window.innerWidth) {
-      const overview = document.getElementById('overview');
-      const overviewContent = document.getElementById('content');
-      const video = document.getElementById('video');
-
       overview.style.marginTop = 110 + "px";
       overview.style.flexDirection = 'column';
       overviewContent.style.maxWidth = '100%';
       video.style.width = (window.innerWidth - 100) + "px";
       video.style.height = ((window.innerWidth - 100) * 0.6) + "px";
+    } else {
+      overview.style.marginTop = "50px";
+      overview.style.flexDirection = undefined;
+      overviewContent.style.maxWidth = '50%';
+      video.style.width = "480px";
+      video.style.height = "270px";
     }
   }
   window.onload = fixOrientation;
