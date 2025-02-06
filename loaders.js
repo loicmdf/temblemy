@@ -123,16 +123,26 @@ document.addEventListener("click", function(event) {
         }
     }
 });
+document.addEventListener("click", function(event) {
+    const dropdown = document.getElementById("dropdown");
+    if (event.target.id === "search-button") {
+        const searchInput = document.getElementById("search-input");
+        if (searchInput) {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = "search.html?s=" + query;
+            }
+        }
+    }
+    else if (event.target.id === "browse-button") {
+        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+    else {
+        dropdown.style.display = "none";
+    }
+});
 document.addEventListener("keypress", function(event) {
     if (event.target.id === "search-input" && event.key === "Enter") {
         document.getElementById("search-button").click();
     }
 });
-document.addEventListener("click", function(event) {
-    const dropdown = document.getElementById("dropdown");
-    if (event.target.id === "browse-button") {
-        dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-    } else {
-        dropdown.style.display = "none";
-    }
-})
