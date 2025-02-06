@@ -22,7 +22,6 @@ function LoadFooter() {
 async function writeBook(book) {
     document.getElementsByClassName("book-list").item(0).insertAdjacentHTML("beforeend", `
         <button class="bookItem" title="${book.title}\nAuthor: ${book.author}\nPublished: ${book.year}\nPrice: $${book.price}" id="${book.id}" style="border: 2px solid #000;
-                border-radius: 5px;
                 cursor: pointer;"
                 transition: 0.1s;
                 onclick="window.location.href = '/temblemy/delivery.html?id=${book.id}'"
