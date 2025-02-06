@@ -110,17 +110,6 @@ function displayBookByName(name) {
         .catch(error => console.error("Error fetching data:", error));
 }
 document.addEventListener("click", function(event) {
-    if (event.target.id === "search-button") {
-        const searchInput = document.getElementById("search-input");
-        if (searchInput) {
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = "search.html?s=" + query;
-            }
-        }
-    }
-});
-document.addEventListener("click", function(event) {
     const dropdown = document.getElementById("dropdown");
     if (event.target.id === "search-button") {
         const searchInput = document.getElementById("search-input");
