@@ -123,7 +123,18 @@ main {
   background: rgba(128, 128, 128, 0.8);
 }
 
-.bookItemImg {
-  width: 250px;
-  height: 350px;
+.bookItem-description {
+  display: flex;
+  color: white;
+  text-wrap: wrap;
+  text-align: center;
+  opacity: 0;
+  padding: 10px;
+  border-radius: 0 0 16px 16px;
+  transition: 0.1s;
+}
+.bookItem:hover .bookItem-description {
+  background: rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  opacity: 1;
 }
