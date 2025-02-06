@@ -1,4 +1,4 @@
-async function LoadHeader() {
+function LoadHeader() {
     let headerfile = "/temblemy/parts/header.html";
     if (window.innerHeight > window.innerWidth) {
         headerfile = "/temblemy/parts/header2.html";
