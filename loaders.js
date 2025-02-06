@@ -21,24 +21,20 @@ function LoadFooter() {
 }
 async function writeBook(book) {
     document.getElementsByClassName("book-list").item(0).insertAdjacentHTML("beforeend", `
-        <button title="${book.title}\nAuthor: ${book.author}\nPublished: ${book.year}\nPrice: $${book.price}" id="${book.id}" style="border: 2px solid #000;
+        <button class="bookItem" title="${book.title}\nAuthor: ${book.author}\nPublished: ${book.year}\nPrice: $${book.price}" id="${book.id}" 
+        style="border: 2px solid #000;
                 cursor: pointer;"
                 onclick="window.location.href = '/temblemy/delivery.html?id=${book.id}'"
-                onmouseover="this.style.border = '2px solid #FFF'"
+                onmouseover="this.style.border = '2px solid #AAA'"
                 onmouseout="this.style.border = '2px solid #000'">
             <div class="bookItemImg" style="
                  width: 250px;
                  height: 350px;
-                 color: white;
-                 display: flex;
-                 flex-direction: column;
-                 justify-content: flex-end;
-                 overflow: hidden;
-                 text-align: center;
                  background: url('${book.image}');
                  background-size: cover;
                  background-repeat: no-repeat;
                  background-position: center;">
+                 <span class="bookItem-description">${book.description}</span>
             </div>
             <div style="background-color: black; width: 100%; padding: 10px 0;">
                 <p class="price" style="font-size: 20px; font-weight: bold; margin: 0; color: white;">Price: $${book.price}</p>
