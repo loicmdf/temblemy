@@ -130,7 +130,7 @@ document.addEventListener("keypress", function(event) {
 });
 document.addEventListener("click", function(event) {
     const dropdown = document.getElementById("dropdown");
-    if (event.target.id === "menu-button") {
+    if (event.target.id === "browse-button") {
         dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
     } else {
         dropdown.style.display = "none";
