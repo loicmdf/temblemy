@@ -10,7 +10,7 @@
       color: white;
       justify-content: space-between;
       align-items: center;
-      margin-top: 50px;
+      margin-top: 3%;
       padding: 30px 40px 30px 40px;
       border-bottom: 2px solid black;
       background: linear-gradient(to right, RGBA(64, 40, 24, 256) 30%, rgba(64,40, 24, 0) 100%),
@@ -154,14 +154,12 @@
     const overviewContent = document.getElementById('content');
     const video = document.getElementById('video');
     if (window.innerHeight > window.innerWidth) {
-      overview.style.marginTop = 110 + "px";
       overview.style.flexDirection = 'column';
       overviewContent.style.maxWidth = '100%';
       video.style.width = (window.innerWidth - 90) + "px";
       video.style.height = ((window.innerWidth - 90) * 0.6) + "px";
       video.padding = "10px";
     } else {
-      overview.style.marginTop = "50px";
       overview.style.flexDirection = 'row';
       overviewContent.style.maxWidth = '50%';
       video.style.width = "480px";
